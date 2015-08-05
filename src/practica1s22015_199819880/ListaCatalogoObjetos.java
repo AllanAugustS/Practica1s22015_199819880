@@ -115,6 +115,8 @@ public class ListaCatalogoObjetos {
     iterador = iterador.siguiente;
     }
     System.out.print("null");
+    
+    
     }
 }
 
