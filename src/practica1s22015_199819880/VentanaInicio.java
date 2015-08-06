@@ -36,8 +36,13 @@ public class VentanaInicio extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jButton1.setText("INICIAR JUEGO");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1);
-        jButton1.setBounds(310, 370, 127, 27);
+        jButton1.setBounds(310, 370, 125, 27);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/practica1s22015_199819880/Super-Mario-Maker.jpg"))); // NOI18N
         jLabel1.setMaximumSize(new java.awt.Dimension(900, 499));
@@ -47,6 +52,17 @@ public class VentanaInicio extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+        CargarObjeto cargar = new CargarObjeto();
+     cargar.setVisible(true);
+     cargar.setResizable(false);
+     cargar.setLocationRelativeTo(null);
+     this.dispose();
+        
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
