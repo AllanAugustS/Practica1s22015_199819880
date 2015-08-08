@@ -42,7 +42,7 @@ public class VentanaInicio extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(310, 370, 125, 27);
+        jButton1.setBounds(310, 370, 180, 27);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/practica1s22015_199819880/Super-Mario-Maker.jpg"))); // NOI18N
         jLabel1.setMaximumSize(new java.awt.Dimension(900, 499));

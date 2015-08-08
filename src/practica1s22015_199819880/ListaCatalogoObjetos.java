@@ -105,6 +105,20 @@ public class ListaCatalogoObjetos {
     return buscado;
     }
     //fin de metodo buscar
+    // metodo buscar por ruta de imagen
+      public NodoCatalogoObjetos Buscarruta(String ruta){
+    
+        NodoCatalogoObjetos buscado = null;
+        NodoCatalogoObjetos iterador = Cabeza;
+        while (buscado == null & iterador != null){
+        if(iterador.Imagen == ruta){
+        buscado= iterador;
+        }
+        iterador = iterador.siguiente;
+        }
+    return buscado;
+    }
+      //fin de metodo buscar ruta
     //metodo para mostrar la lista
     
     public void mostrar(){
