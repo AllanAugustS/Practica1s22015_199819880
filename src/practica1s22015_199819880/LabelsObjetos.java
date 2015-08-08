@@ -54,18 +54,7 @@ public class LabelsObjetos extends JLabel {
             nombre.setBounds(100, 5+(i*100), 200, 25);
             nombre.setVisible(true);
             this.add(nombre);
-        //boton eliminar
-            
-            JButton eliminar = new JButton("Eliminar");
-            eliminar.setBounds(250, 5+(i*100), 200, 25);
-            eliminar.setVisible(true);
-            this.add(eliminar);
-        //boton modificar
-            
-            JButton modificar = new JButton("Modificar");
-            modificar.setBounds(470, 5+(i*100), 200, 25);
-            modificar.setVisible(true);
-            this.add(modificar);
+       
             
             i++;
             raiz = raiz.siguiente;
