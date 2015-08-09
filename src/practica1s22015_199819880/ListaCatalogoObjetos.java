@@ -132,6 +132,50 @@ public class ListaCatalogoObjetos {
     
     
     }
+    //fin metodo mostrar lista
+    //metodo eliminar nodo
+    public void eliminar(String nom){
+    
+    if(this.Cabeza.getNombre().equals(nom)){
+        
+        Cabeza= Cabeza.getSiguiente();
+    }else{
+    NodoCatalogoObjetos aux = this.Cabeza;
+    while(aux!=null && !aux.getSiguiente().getNombre().equals(nom)){
+    aux = aux.getSiguiente();
+    }
+    if (aux.getSiguiente().getNombre().equals(nom)){
+    aux.setSiguiente(aux.getSiguiente().getSiguiente());
+    
+    }
+    }
+    }
+    //fin de metodo eliminarnodo
+    //metodo modificar lista
+    
+    public void modificar(String parametro,String nom){
+        
+        if(this.Cabeza.getNombre().equals(parametro)){       
+            String nombre1 = this.Cabeza.getNombre();           
+            if(!nom.equals("")){
+            nombre1 =nom;
+            }
+            Cabeza.setNombre(nombre1);
+        }else{
+        NodoCatalogoObjetos aux = this.Cabeza;
+        while(aux !=null && !aux.getNombre().equals(parametro)){
+        aux = aux.getSiguiente();
+        }
+         if(aux.getNombre().equals(parametro)){
+         String nombre1= aux.getNombre();
+           if(!nom.equals("")){
+           nombre1= nom;
+           }
+           aux.setNombre(nombre1);
+         }  
+        }
+    }
+    //fin de metodo modificar
 }
 
 

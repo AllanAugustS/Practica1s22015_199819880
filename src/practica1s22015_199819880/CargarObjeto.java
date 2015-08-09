@@ -16,7 +16,7 @@ public class CargarObjeto extends javax.swing.JFrame {
 
   
     
-    
+   
   
     
     public CargarObjeto() {
@@ -434,11 +434,11 @@ public class CargarObjeto extends javax.swing.JFrame {
        
         
         
-        CatalogoObjetos lista = new CatalogoObjetos(ListaCatalogoObjetos.ListaObjetos);
-        lista.setVisible(true);
-        lista.setResizable(false);
-        lista.setLocationRelativeTo(null);
-        this.dispose();
+//        CatalogoObjetos lista = new CatalogoObjetos(ListaCatalogoObjetos.ListaObjetos);
+//        lista.setVisible(true);
+//        lista.setResizable(false);
+//        lista.setLocationRelativeTo(null);
+//        this.dispose();
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
@@ -447,11 +447,11 @@ public class CargarObjeto extends javax.swing.JFrame {
         ListaCatalogoObjetos.ListaObjetos.mostrar();
         txtnombre2.setText("");
         
-        CatalogoObjetos lista = new CatalogoObjetos(ListaCatalogoObjetos.ListaObjetos);
-        lista.setVisible(true);
-        lista.setResizable(false);
-        lista.setLocationRelativeTo(null);
-        this.dispose();
+//        CatalogoObjetos lista = new CatalogoObjetos(ListaCatalogoObjetos.ListaObjetos);
+//        lista.setVisible(true);
+//        lista.setResizable(false);
+//        lista.setLocationRelativeTo(null);
+//        this.dispose();
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
@@ -460,11 +460,11 @@ public class CargarObjeto extends javax.swing.JFrame {
         ListaCatalogoObjetos.ListaObjetos.mostrar();
         txtnombre3.setText("");
         
-        CatalogoObjetos lista = new CatalogoObjetos(ListaCatalogoObjetos.ListaObjetos);
-        lista.setVisible(true);
-        lista.setResizable(false);
-        lista.setLocationRelativeTo(null);
-        this.dispose();
+//        CatalogoObjetos lista = new CatalogoObjetos(ListaCatalogoObjetos.ListaObjetos);
+//        lista.setVisible(true);
+//        lista.setResizable(false);
+//        lista.setLocationRelativeTo(null);
+//        this.dispose();
         
     }//GEN-LAST:event_jButton13ActionPerformed
 
@@ -474,11 +474,11 @@ public class CargarObjeto extends javax.swing.JFrame {
         ListaCatalogoObjetos.ListaObjetos.mostrar();
         txtnombre4.setText("");
         
-        CatalogoObjetos lista = new CatalogoObjetos(ListaCatalogoObjetos.ListaObjetos);
-        lista.setVisible(true);
-        lista.setResizable(false);
-        lista.setLocationRelativeTo(null);
-        this.dispose();
+//        CatalogoObjetos lista = new CatalogoObjetos(ListaCatalogoObjetos.ListaObjetos);
+//        lista.setVisible(true);
+//        lista.setResizable(false);
+//        lista.setLocationRelativeTo(null);
+//        this.dispose();
         
     }//GEN-LAST:event_jButton14ActionPerformed
 
@@ -488,11 +488,11 @@ public class CargarObjeto extends javax.swing.JFrame {
         ListaCatalogoObjetos.ListaObjetos.mostrar();
         txtnombre5.setText("");
         
-        CatalogoObjetos lista = new CatalogoObjetos(ListaCatalogoObjetos.ListaObjetos);
-        lista.setVisible(true);
-        lista.setResizable(false);
-        lista.setLocationRelativeTo(null);
-        this.dispose();
+//        CatalogoObjetos lista = new CatalogoObjetos(ListaCatalogoObjetos.ListaObjetos);
+//        lista.setVisible(true);
+//        lista.setResizable(false);
+//        lista.setLocationRelativeTo(null);
+//        this.dispose();
         
     }//GEN-LAST:event_jButton15ActionPerformed
 
@@ -502,11 +502,11 @@ public class CargarObjeto extends javax.swing.JFrame {
         ListaCatalogoObjetos.ListaObjetos.mostrar();
         txtnombre6.setText("");
         
-        CatalogoObjetos lista = new CatalogoObjetos(ListaCatalogoObjetos.ListaObjetos);
-        lista.setVisible(true);
-        lista.setResizable(false);
-        lista.setLocationRelativeTo(null);
-        this.dispose();
+//        CatalogoObjetos lista = new CatalogoObjetos(ListaCatalogoObjetos.ListaObjetos);
+//        lista.setVisible(true);
+//        lista.setResizable(false);
+//        lista.setLocationRelativeTo(null);
+//        this.dispose();
         
     }//GEN-LAST:event_jButton17ActionPerformed
 
@@ -516,11 +516,11 @@ public class CargarObjeto extends javax.swing.JFrame {
         ListaCatalogoObjetos.ListaObjetos.mostrar();
         txtnombre7.setText("");
         
-        CatalogoObjetos lista = new CatalogoObjetos(ListaCatalogoObjetos.ListaObjetos);
-        lista.setVisible(true);
-        lista.setResizable(false);
-        lista.setLocationRelativeTo(null);
-        this.dispose();
+//        CatalogoObjetos lista = new CatalogoObjetos(ListaCatalogoObjetos.ListaObjetos);
+//        lista.setVisible(true);
+//        lista.setResizable(false);
+//        lista.setLocationRelativeTo(null);
+//        this.dispose();
         
     }//GEN-LAST:event_jButton18ActionPerformed
 
@@ -530,16 +530,16 @@ public class CargarObjeto extends javax.swing.JFrame {
         ListaCatalogoObjetos.ListaObjetos.mostrar();
         txtnombre8.setText("");
         
-        CatalogoObjetos lista = new CatalogoObjetos(ListaCatalogoObjetos.ListaObjetos);
-        lista.setVisible(true);
-        lista.setResizable(false);
-        lista.setLocationRelativeTo(null);
-        this.dispose();
+//        CatalogoObjetos lista = new CatalogoObjetos(ListaCatalogoObjetos.ListaObjetos);
+//        lista.setVisible(true);
+//        lista.setResizable(false);
+//        lista.setLocationRelativeTo(null);
+//        this.dispose();
         
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-       CatalogoObjetos catalogo = new CatalogoObjetos(ListaCatalogoObjetos.ListaObjetos);
+      CatalogoObjetos catalogo = new CatalogoObjetos(ListaCatalogoObjetos.ListaObjetos);
        catalogo.setVisible(true);
        catalogo.setResizable(false);
        catalogo.setLocationRelativeTo(null);
