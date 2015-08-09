@@ -71,6 +71,11 @@ public class DCrearPantalla extends javax.swing.JFrame {
 
         btnseleccionarimagen1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnseleccionarimagen1.setText("Crear Pantalla");
+        btnseleccionarimagen1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnseleccionarimagen1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -147,6 +152,17 @@ public class DCrearPantalla extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_btnseleccionarimagenActionPerformed
+
+    private void btnseleccionarimagen1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnseleccionarimagen1ActionPerformed
+        
+        try{
+           new CrearPantalla(Integer.parseInt(txtancho.getText()), Integer.parseInt(txtlargo.getText()), btnseleccionarimagen.getText(), lObjetos).setVisible(true);
+           this.dispose();
+        }catch(Exception e){
+           JOptionPane.showMessageDialog(this, "Ingresar solamente numeros para las casillas Por favor");
+        }
+        
+    }//GEN-LAST:event_btnseleccionarimagen1ActionPerformed
 
     /**
      * @param args the command line arguments

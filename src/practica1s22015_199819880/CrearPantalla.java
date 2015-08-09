@@ -103,9 +103,8 @@ public class CrearPantalla extends javax.swing.JFrame implements Runnable{
     private void pausa(java.awt.event.KeyEvent evt){
     if(KeyEvent.VK_ENTER == evt.getKeyCode()){
     
-    new PausaJuego(this, true, cobjetos,cola,pila, matriz).setVisible(true);
+       new PausarJuego(this, true, cobjetos,pila,cola, matriz).setVisible(true);
     }
-    
     
     }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

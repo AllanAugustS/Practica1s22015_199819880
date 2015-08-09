@@ -49,6 +49,11 @@ public class CatalogoObjetos extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Ravie", 1, 11)); // NOI18N
         jButton2.setText("Crear Pantalla");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setFont(new java.awt.Font("Ravie", 1, 11)); // NOI18N
         jButton3.setText("Agregar");
@@ -99,6 +104,16 @@ public class CatalogoObjetos extends javax.swing.JFrame {
         this.dispose();
         
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+        DCrearPantalla precrear = new DCrearPantalla(ListaCatalogoObjetos.ListaObjetos);
+        precrear.setVisible(true);
+        precrear.setResizable(false);
+        precrear.setLocationRelativeTo(null);
+        this.dispose();
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
