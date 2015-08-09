@@ -4,7 +4,6 @@
  */
 package practica1s22015_199819880;
 
-import java.awt.Image;
 import java.net.URL;
 import javax.swing.ImageIcon;
 
