@@ -13,11 +13,15 @@ public class ListaCatalogoObjetos {
     NodoCatalogoObjetos Cabeza;
     NodoCatalogoObjetos Fin;
     static ListaCatalogoObjetos ListaObjetos = new ListaCatalogoObjetos();
-    
+    private int cantidad;
     public ListaCatalogoObjetos(){
-    
+    cantidad=0;
     Cabeza = null;
     Fin = null;
+    }
+
+    public int getCantidad() {
+        return cantidad;
     }
     
     // metodo para indicar que la lista esta vacia
@@ -56,6 +60,7 @@ public class ListaCatalogoObjetos {
     enlazar(Fin, nuevo);
     Fin = nuevo;
     }
+    cantidad++;
     }
     //fin de metodo insertar al final de la lista
     // metodo para eliminar al frente o al inicio de la lista
