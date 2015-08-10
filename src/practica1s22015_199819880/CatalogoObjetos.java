@@ -109,8 +109,8 @@ public class CatalogoObjetos extends javax.swing.JFrame {
         
         DCrearPantalla precrear = new DCrearPantalla(ListaCatalogoObjetos.ListaObjetos);
         precrear.setVisible(true);
-        precrear.setResizable(false);
-        precrear.setLocationRelativeTo(null);
+        
+        
         this.dispose();
         
     }//GEN-LAST:event_jButton2ActionPerformed
