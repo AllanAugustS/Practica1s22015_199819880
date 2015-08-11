@@ -26,7 +26,7 @@ public class CrearPantalla extends javax.swing.JFrame implements Runnable {
     
      private final Tablero tablero;
      private final ListaCatalogoObjetos cobjetos;
-     private final PilaListaCatalogo pila;
+     
      private final ColaListaCatalogo cola;
      private int totalObjetos,cantObjetos;
      private Objetos lblobjetos;
@@ -38,10 +38,10 @@ public class CrearPantalla extends javax.swing.JFrame implements Runnable {
         
         
         
-        tablero = new Tablero(alto, alto, imagen);
+        tablero = new Tablero(ancho, alto, imagen);
         this.add(tablero);
         this.cobjetos = cobjetos;
-        this.pila = new PilaListaCatalogo();
+       
         this.cola = new ColaListaCatalogo();
         this.totalObjetos = cobjetos.getCantidad();
         this.cantObjetos = 0;
@@ -50,10 +50,10 @@ public class CrearPantalla extends javax.swing.JFrame implements Runnable {
         matriz.cabeceras();
         this.insertarPrimeros();
         this.agregarObjetos();
-        hilo1 = new Thread(this);
-        hilo1.start();
+//        hilo1 = new Thread(this);
+//        hilo1.start();
         
-         Objetos panel = new Objetos(cobjetos);
+         Objetos panel = new Objetos(PilaListaCatalogo.pila);
         JScrollPane scroolPane = new JScrollPane(panel);
         scroolPane.setBounds(5, 80, 130, 500);
         scroolPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
@@ -61,49 +61,63 @@ public class CrearPantalla extends javax.swing.JFrame implements Runnable {
         
         this.add(scroolPane);
         this.repaint();
+         this.remove(lblobjetos);
+        this.agregarObjetos();
+        this.repaint();
     }
 
     public void hilo(){
+         NodoCatalogoObjetos temp = cobjetos.Cabeza;
+    while(temp!= null){
+       PilaListaCatalogo.pila.insertar(temp.getImagen(),temp.getNombre());
+       temp = temp.getSiguiente();
     
-        int objetos = cobjetos.getCantidad();
-        
-        int num1 =(int)Math.floor(Math.random()*(objetos-0+1)+0);
-        if(cantObjetos<totalObjetos){
-        NodoCatalogoObjetos nodo = cobjetos.Cabeza;
-        for(int j=1; j<num1;j++){
-        nodo = nodo.getSiguiente();
-        
-        }
-        cantObjetos++;
-        pila.insertar(nodo.getImagen(), nodo.getNombre());
-        }
+//        int objetos = cobjetos.getCantidad();
+//        
+//        int num1 =(int)Math.floor(Math.random()*(objetos-0+1)+0);
+//        if(cantObjetos<totalObjetos){
+//        NodoCatalogoObjetos nodo = cobjetos.Cabeza;
+//        for(int j=1; j<num1;j++){
+//        nodo = nodo.getSiguiente();
+//        
+//        }
+//        cantObjetos++;
+//        pila.insertar(nodo.getImagen(), nodo.getNombre());
+//        }
     this.remove(lblobjetos);
     this.agregarObjetos();
     this.repaint();
     }
-    
+    }
     public void insertarPrimeros(){
     
-    int Objetos = cobjetos.getCantidad();
-    
-    for(int i=0; i<5; i++){
-       int num1 = (int) Math.floor(Math.random()*(Objetos-0+1)+0);
-       if(cantObjetos<totalObjetos){
-       NodoCatalogoObjetos nodo = cobjetos.Cabeza;
-       for(int j=1; j<num1; j++){
-          nodo = nodo.getSiguiente();
-       }
-       cantObjetos++;
-       pila.insertar(nodo.getImagen(), nodo.getNombre());
-       }
-    
-    }
-    
+        NodoCatalogoObjetos temp = cobjetos.Cabeza;
+    while(temp!= null){
+       PilaListaCatalogo.pila.insertar(temp.getImagen(),temp.getNombre());
+       temp = temp.getSiguiente();
+       
+       
+        }
+//    int Objetos = cobjetos.getCantidad();
+//    
+//    for(int i=0; i<5; i++){
+//       int num1 = (int) Math.floor(Math.random()*(Objetos-0+1)+0);
+//       if(cantObjetos<totalObjetos){
+//       NodoCatalogoObjetos nodo = cobjetos.Cabeza;
+//       for(int j=1; j<num1; j++){
+//          nodo = nodo.getSiguiente();
+//       }
+//       cantObjetos++;
+//       pila.insertar(nodo.getImagen(), nodo.getNombre());
+//       }
+//    
+//    }
+//    
     }
     
     public void agregarObjetos(){
     
-    lblobjetos = new Objetos(cobjetos);
+    lblobjetos = new Objetos(PilaListaCatalogo.pila);
     this.add(lblobjetos);
     
     }
@@ -163,7 +177,7 @@ public class CrearPantalla extends javax.swing.JFrame implements Runnable {
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
        if(KeyEvent.VK_ENTER == evt.getKeyCode()){
     
-       new PausarJuego( cobjetos,pila,cola, matriz).setVisible(true);
+       new PausarJuego( cobjetos,PilaListaCatalogo.pila,cola, matriz).setVisible(true);
     }
     }//GEN-LAST:event_formKeyPressed
  

@@ -14,9 +14,9 @@ import javax.swing.JLabel;
  */
 public class Objetos extends JLabel {
 
-    public Objetos(ListaCatalogoObjetos objetos) {
+    public Objetos(PilaListaCatalogo objetos) {
         
-        NodoCatalogoObjetos raiz = objetos.Cabeza;
+        NodoCatalogoObjetos raiz = objetos.getRaiz();
         int i=0;
         while(raiz != null){
         
@@ -29,7 +29,7 @@ public class Objetos extends JLabel {
         this.setLayout(null);
         this.setVisible(true);
         
-         raiz = objetos.Cabeza;
+         raiz = objetos.getRaiz();
         i=0;
         while(raiz!= null){
           

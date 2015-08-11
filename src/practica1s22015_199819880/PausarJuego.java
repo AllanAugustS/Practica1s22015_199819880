@@ -177,7 +177,15 @@ public class PausarJuego extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         
-        graphviz.CatObjetos(objetos1.getRaiz());
+         PilaListaCatalogo.pila.Dibujar();
+        PilaListaCatalogo.pila.GenerarPNG();
+        Runtime runtime = Runtime.getRuntime();
+        try{
+          runtime.exec("mspaint reporte.png");
+        }catch(Exception ex){
+            Logger.getLogger(CatalogoObjetos.class.getName()).log(Level.SEVERE,null,ex);
+            
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
