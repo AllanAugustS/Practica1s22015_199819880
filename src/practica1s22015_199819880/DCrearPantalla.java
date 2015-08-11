@@ -14,12 +14,14 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  */
 public class DCrearPantalla extends javax.swing.JFrame {
 
-    ListaCatalogoObjetos lObjetos;
+    /**
+     * Creates new form DCrearPantalla
+     */
+    ListaCatalogoObjetos lobjetos;
     
-    
-    public DCrearPantalla(ListaCatalogoObjetos lObjetos) {
+    public DCrearPantalla(ListaCatalogoObjetos lobjetos) {
         initComponents();
-        this.lObjetos = lObjetos;
+        this.lobjetos=lobjetos;
     }
 
     /**
@@ -31,45 +33,36 @@ public class DCrearPantalla extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        lbltitulo = new javax.swing.JLabel();
+        lbltitulo2 = new javax.swing.JLabel();
+        lblancho = new javax.swing.JLabel();
+        txtancho = new javax.swing.JTextField();
+        lbllargo = new javax.swing.JLabel();
         txtlargo = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        btnseleccionarimagen = new javax.swing.JButton();
+        lblfondo = new javax.swing.JLabel();
+        btnseleccionar = new javax.swing.JButton();
         btncrear = new javax.swing.JButton();
-        txtlargo1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Propiedades de la Pantalla de Juego");
-        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lbltitulo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lbltitulo.setText("Ingrese Las Propiedades de la Pantalla");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Ingresar Numero de Casillas");
+        lbltitulo2.setText("Numero de Casillas:");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel3.setText("Ancho:");
+        lblancho.setText("Ancho:");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel4.setText("Largo:");
+        lbllargo.setText("Largo:");
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel5.setText("Fondo De Pantalla:");
+        lblfondo.setText("Fondo:");
 
-        btnseleccionarimagen.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btnseleccionarimagen.setText("Seleccionar Imagen");
-        btnseleccionarimagen.addActionListener(new java.awt.event.ActionListener() {
+        btnseleccionar.setText("Seleccione la Imagen");
+        btnseleccionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnseleccionarimagenActionPerformed(evt);
+                btnseleccionarActionPerformed(evt);
             }
         });
 
-        btncrear.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btncrear.setText("Crear Pantalla");
         btncrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,88 +74,89 @@ public class DCrearPantalla extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbltitulo2)
+                    .addComponent(lbltitulo))
+                .addGap(49, 49, 49))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(205, 205, 205)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(66, 66, 66)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtlargo, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGap(106, 106, 106)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(118, 118, 118)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblancho)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnseleccionarimagen, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtancho, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(45, 45, 45)
+                                .addComponent(lbllargo)
+                                .addGap(31, 31, 31)
+                                .addComponent(txtlargo, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblfondo)
                                 .addGap(39, 39, 39)
-                                .addComponent(txtlargo1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(176, 176, 176)))))
-                .addContainerGap(114, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btncrear, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(188, 188, 188))
+                                .addComponent(btnseleccionar))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(104, 104, 104)
+                        .addComponent(btncrear)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(lbltitulo)
                 .addGap(30, 30, 30)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lbltitulo2)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblancho)
+                    .addComponent(txtancho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbllargo)
+                    .addComponent(txtlargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addComponent(txtlargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtlargo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(btnseleccionarimagen))
-                .addGap(60, 60, 60)
+                    .addComponent(lblfondo)
+                    .addComponent(btnseleccionar))
+                .addGap(46, 46, 46)
                 .addComponent(btncrear)
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addContainerGap(64, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnseleccionarimagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnseleccionarimagenActionPerformed
-      
-        try{
+    private void btnseleccionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnseleccionarActionPerformed
+        
+         try{
             JFileChooser chooser = new JFileChooser();
             FileNameExtensionFilter filter = new FileNameExtensionFilter("JPG & GIF Images", "jpg", "gif");
             chooser.setFileFilter(filter);
             int returnVal = chooser.showOpenDialog(this);
             if(returnVal == JFileChooser.APPROVE_OPTION){
-            btnseleccionarimagen.setText(chooser.getSelectedFile().toString());
+            btnseleccionar.setText(chooser.getSelectedFile().toString());
             }
         }catch(Exception e){
            JOptionPane.showMessageDialog(this, "Debe Seleccionar una Imagen Valida");
         }
         
-    }//GEN-LAST:event_btnseleccionarimagenActionPerformed
+        
+    }//GEN-LAST:event_btnseleccionarActionPerformed
 
     private void btncrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncrearActionPerformed
         
         try{
-             
-            CrearPantalla pantallita = new CrearPantalla(Integer.parseInt(txtlargo1.getText()), Integer.parseInt(txtlargo.getText()), btnseleccionarimagen.getText(), lObjetos);
-           pantallita.setVisible(true);
-           this.dispose();
+            String ancho = txtancho.getText().toString();
+            String largo = txtlargo.getText().toString();
+            int x = Integer.parseInt(ancho);
+            int y = Integer.parseInt(largo);
+          new CrearPantalla(x, y, btnseleccionar.getText(), lobjetos).setVisible(true);
+          this.dispose();
         }catch(Exception e){
-           JOptionPane.showMessageDialog(this, "Ingresar solamente numeros para las casillas Por favor");
+            
+        JOptionPane.showMessageDialog(this, "Debe ingresar numeros");
+        
         }
         
     }//GEN-LAST:event_btncrearActionPerformed
@@ -170,16 +164,46 @@ public class DCrearPantalla extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-  
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(DCrearPantalla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(DCrearPantalla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(DCrearPantalla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(DCrearPantalla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new DCrearPantalla().setVisible(true);
+//            }
+//        });
+//    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btncrear;
-    private javax.swing.JButton btnseleccionarimagen;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JButton btnseleccionar;
+    private javax.swing.JLabel lblancho;
+    private javax.swing.JLabel lblfondo;
+    private javax.swing.JLabel lbllargo;
+    private javax.swing.JLabel lbltitulo;
+    private javax.swing.JLabel lbltitulo2;
+    private javax.swing.JTextField txtancho;
     private javax.swing.JTextField txtlargo;
-    private javax.swing.JTextField txtlargo1;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,21 +4,24 @@
  */
 package practica1s22015_199819880;
 
+
 import java.awt.Frame;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author allan
  */
-public class PausarJuego extends javax.swing.JDialog {
+public class PausarJuego extends javax.swing.JFrame {
 
     /**
      * Creates new form PausarJuego
-     * @param parent
-     * @param modal
+//     * @param parent
+//     * @param modal
      */
     
-    private final Frame padre;
+//    private final Frame padre;
     private final Graphviz graphviz = new Graphviz();
     private final ListaCatalogoObjetos cobjetos;
     private final PilaListaCatalogo objetos1;
@@ -27,16 +30,20 @@ public class PausarJuego extends javax.swing.JDialog {
     
             
     
-    public PausarJuego(java.awt.Frame parent, boolean modal, ListaCatalogoObjetos cobjetos,PilaListaCatalogo objetos1, ColaListaCatalogo objetos2,Matriz matriz) {
+    public PausarJuego( ListaCatalogoObjetos cobjetos,PilaListaCatalogo objetos1, ColaListaCatalogo objetos2,Matriz matriz) {
         
-        super(parent, modal);
-        this.padre = parent;
+//        super(parent, modal);
+//        this.padre = parent;
         this.cobjetos = cobjetos;
         this.objetos2 = objetos2;
         this.objetos1 = objetos1;
         this.matriz = matriz;
         
         initComponents();
+    }
+
+    private PausarJuego() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -147,7 +154,20 @@ public class PausarJuego extends javax.swing.JDialog {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
-        graphviz.CatObjetos(cobjetos.Cabeza);
+//        graphviz.CatObjetos(cobjetos.Cabeza);
+        
+        ListaCatalogoObjetos.ListaObjetos.Dibujar();
+        ListaCatalogoObjetos.ListaObjetos.GenerarPNG();
+        Runtime runtime = Runtime.getRuntime();
+        try{
+          runtime.exec("mspaint reporte.png");
+        }catch(Exception ex){
+            Logger.getLogger(CatalogoObjetos.class.getName()).log(Level.SEVERE,null,ex);
+            
+        }
+        
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -161,7 +181,7 @@ public class PausarJuego extends javax.swing.JDialog {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        
+//tablero        
         graphviz.dibujarMatriz(matriz.getFila(),matriz.getCabecera());
         
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -196,7 +216,7 @@ public class PausarJuego extends javax.swing.JDialog {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-//                new PausarJuego().setVisible(true);
+                new PausarJuego().setVisible(true);
             }
         });
     }

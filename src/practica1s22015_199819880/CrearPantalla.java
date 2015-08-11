@@ -6,14 +6,16 @@ package practica1s22015_199819880;
 
 
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JScrollPane;
 
 /**
  *
  * @author allan
  */
-public class CrearPantalla extends javax.swing.JFrame implements Runnable{
+public class CrearPantalla extends javax.swing.JFrame implements Runnable {
 
     /**
      * Creates new form CrearPantalla
@@ -33,12 +35,15 @@ public class CrearPantalla extends javax.swing.JFrame implements Runnable{
     
     public CrearPantalla(int ancho, int alto, String imagen, ListaCatalogoObjetos cobjetos ) {
         initComponents();
+        
+        
+        
         tablero = new Tablero(alto, alto, imagen);
         this.add(tablero);
         this.cobjetos = cobjetos;
         this.pila = new PilaListaCatalogo();
         this.cola = new ColaListaCatalogo();
-        this.totalObjetos = Integer.parseInt(cobjetos.Cabeza.getSiguiente().getNombre());
+        this.totalObjetos = cobjetos.getCantidad();
         this.cantObjetos = 0;
         this.matriz = new Matriz();
         matriz.insertarColumnas(ancho, alto);
@@ -47,6 +52,15 @@ public class CrearPantalla extends javax.swing.JFrame implements Runnable{
         this.agregarObjetos();
         hilo1 = new Thread(this);
         hilo1.start();
+        
+         Objetos panel = new Objetos(cobjetos);
+        JScrollPane scroolPane = new JScrollPane(panel);
+        scroolPane.setBounds(5, 80, 130, 500);
+        scroolPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+        scroolPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        
+        this.add(scroolPane);
+        this.repaint();
     }
 
     public void hilo(){
@@ -61,7 +75,7 @@ public class CrearPantalla extends javax.swing.JFrame implements Runnable{
         
         }
         cantObjetos++;
-        cola.inserta(nodo.getImagen(), nodo.getNombre());
+        pila.insertar(nodo.getImagen(), nodo.getNombre());
         }
     this.remove(lblobjetos);
     this.agregarObjetos();
@@ -80,7 +94,7 @@ public class CrearPantalla extends javax.swing.JFrame implements Runnable{
           nodo = nodo.getSiguiente();
        }
        cantObjetos++;
-       cola.inserta(nodo.getImagen(), nodo.getNombre());
+       pila.insertar(nodo.getImagen(), nodo.getNombre());
        }
     
     }
@@ -89,10 +103,12 @@ public class CrearPantalla extends javax.swing.JFrame implements Runnable{
     
     public void agregarObjetos(){
     
-    lblobjetos = new Objetos(cola);
+    lblobjetos = new Objetos(cobjetos);
     this.add(lblobjetos);
     
     }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -100,37 +116,67 @@ public class CrearPantalla extends javax.swing.JFrame implements Runnable{
      */
     @SuppressWarnings("unchecked")
     
-    private void pausa(java.awt.event.KeyEvent evt){
-    if(KeyEvent.VK_ENTER == evt.getKeyCode()){
-    
-       new PausarJuego(this, true, cobjetos,pila,cola, matriz).setVisible(true);
-    }
-    
-    }
+   
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                formKeyPressed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel1.setText("Objetos");
+
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel2.setText("MARIO MAKER GUATEMALTECO");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jLabel1)
+                .addGap(168, 168, 168)
+                .addComponent(jLabel2)
+                .addContainerGap(257, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(480, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
+       if(KeyEvent.VK_ENTER == evt.getKeyCode()){
+    
+       new PausarJuego( cobjetos,pila,cola, matriz).setVisible(true);
+    }
+    }//GEN-LAST:event_formKeyPressed
+ 
+   
+   
+    
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 
     @Override

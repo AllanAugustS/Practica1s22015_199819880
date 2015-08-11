@@ -4,6 +4,7 @@
  */
 package practica1s22015_199819880;
 
+import java.net.URL;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
@@ -13,16 +14,28 @@ import javax.swing.JLabel;
  */
 public class Objetos extends JLabel {
 
-    public Objetos(ColaListaCatalogo objetos) {
+    public Objetos(ListaCatalogoObjetos objetos) {
+        
+        NodoCatalogoObjetos raiz = objetos.Cabeza;
+        int i=0;
+        while(raiz != null){
+        
+        i++;
+        raiz = raiz.getSiguiente();
+        
+        }
         this.setBounds(5,80,130,510);
         this.setOpaque(true);
         this.setLayout(null);
         this.setVisible(true);
         
-        NodoCatalogoObjetos cabeza = objetos.getRaiz();
-        for(int i=0; i<5 && cabeza!= null; i++){
+         raiz = objetos.Cabeza;
+        i=0;
+        while(raiz!= null){
+          
+          URL url = this.getClass().getResource(raiz.Imagen);
+            ImageIcon a = new ImageIcon(url);
         
-          ImageIcon a = new ImageIcon(cabeza.getImagen());
           java.awt.Image b = a.getImage();
           ImageIcon c = new ImageIcon(b.getScaledInstance(95, 95, java.awt.Image.SCALE_DEFAULT));
           
@@ -31,14 +44,10 @@ public class Objetos extends JLabel {
           imagen.setBounds(15, 5+(i*100), 95, 95);
           imagen.setVisible(true);
           this.add(imagen);
-          
-          
-          cabeza = cabeza.getSiguiente();
+          i++;
+          raiz = raiz.siguiente;
         }
         
         
-    }
-    
-    
-    
+    }    
 }

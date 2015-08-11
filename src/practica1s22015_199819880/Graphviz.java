@@ -15,29 +15,50 @@ import java.io.PrintWriter;
  */
 public class Graphviz {
     //arreglar el path
-    final private String direccion = "/c:/allan/Java.reporte.png";
+    final private String direccion = "C:/Users/allan/Desktop.reporte.png";
 
     public String getDireccion() {
         return direccion;
     }
     
-    public void dibujar(String dot, String png){
+    public void dibujar(String archivoDot, String archivoPNG){
     
         try{
-        ProcessBuilder pbuilder;
-        pbuilder = new ProcessBuilder("dot","-Tpng","-o", png,dot);
-        pbuilder.redirectErrorStream(true);
-        pbuilder.start();
-        }catch(Exception e){}
+            String doPath="C:\\Users\\allan\\Desktop\\release\\bin\\dot.exe";
+            archivoDot="Salida.dot";
+            archivoPNG="reporte.png";
+            String tParam="-Tpng";
+            String oParam="-o";
+            
+            String[] command= new String[5];
+            command[0]=doPath;
+            command[1]=tParam;
+            command[2]=archivoDot;
+            command[3]=oParam;
+            command[4]=archivoPNG;
+            
+            Runtime runtime = Runtime.getRuntime();
+            runtime.exec(command);
+            
+        }catch(Exception e){
+        }
     }
     
+//        try{
+//        ProcessBuilder pbuilder;
+//        pbuilder = new ProcessBuilder("dot","-Tpng","-o", png,dot);
+//        pbuilder.redirectErrorStream(true);
+//        pbuilder.start();
+//        }catch(Exception e){}
+//    }
+//    
     public void CatObjetos(NodoCatalogoObjetos raiz){
     
     FileWriter fichero = null;
     try{
       fichero = new FileWriter("Salida.dot");
       PrintWriter pw = new PrintWriter(fichero);
-      pw.println(ToObjetos(raiz));
+      pw.println(toObjetos(raiz));
       Desktop.getDesktop().open(new File("Salida.dot"));
     
     }catch(Exception e){
@@ -52,11 +73,12 @@ public class Graphviz {
     this.dibujar("Salida.dot", direccion);
     }
     
-    private String ToObjetos(NodoCatalogoObjetos objetos){
+    private String toObjetos(NodoCatalogoObjetos objetos){
     
     StringBuilder b = new StringBuilder();
     b.append("digraph G { \n");
     b.append(ToObjeto(objetos, 0));
+    b.append(toCatObjeto(objetos, 0));
     b.append("}\n");
     return b.toString();
     }

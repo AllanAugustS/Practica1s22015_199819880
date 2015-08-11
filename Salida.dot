@@ -1,0 +1,6 @@
+digraph G { 
+objeto1 [label = "sad\1Mario.png"]; 
+objeto1 [label = "sdasd\1Goomba.png"]; 
+Objeto1 -> Objeto1 
+}
+
