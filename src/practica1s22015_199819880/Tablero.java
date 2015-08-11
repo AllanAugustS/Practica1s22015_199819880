@@ -20,7 +20,7 @@ public class Tablero extends JLabel {
     ImageIcon c = new ImageIcon(b.getScaledInstance(795, 510, java.awt.Image.SCALE_DEFAULT));
     
     this.setIcon(c);
-    this.setBounds(140, 80, 775, 510);
+    this.setBounds(140, 80, 775, 490);
     this.setVisible(true);
     this.setLayout(null);
     
